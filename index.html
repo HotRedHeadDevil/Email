@@ -212,7 +212,7 @@
 
   <div class="email-footer">
     <div class="attachments-label">[ Attachments ]</div>
-    <a class="attachment" id="dl-link" href="#">
+    <a class="attachment" id="dl-link" href="Helena_Glory.jpg" download="Helena_Glory.jpg">
       <div class="attach-icon">
         <span style="margin-top:6px; font-size:8px; font-weight:700; color:#3a5f7a;">IMG</span>
       </div>
@@ -233,44 +233,3 @@
 </div>
 <div class="scanline"></div>
 </div>
-
-<script>
-  const link = document.getElementById('dl-link');
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const canvas = document.createElement('canvas');
-    canvas.width = 400;
-    canvas.height = 300;
-    const ctx = canvas.getContext('2d');
-    ctx.fillStyle = '#1a1208';
-    ctx.fillRect(0, 0, 400, 300);
-    const grad = ctx.createRadialGradient(200, 150, 10, 200, 150, 180);
-    grad.addColorStop(0, '#c8a050');
-    grad.addColorStop(0.4, '#8a5a20');
-    grad.addColorStop(1, '#1a1208');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, 400, 300);
-    ctx.fillStyle = '#f5f0d0';
-    ctx.font = 'bold 18px Courier New';
-    ctx.textAlign = 'center';
-    ctx.fillText('CLASSIFIED', 200, 60);
-    ctx.font = '13px Courier New';
-    ctx.fillStyle = '#d4b870';
-    ctx.fillText('[ HUMANITY LEAGUE ]', 200, 90);
-    ctx.strokeStyle = '#c8a050';
-    ctx.lineWidth = 1;
-    ctx.strokeRect(30, 30, 340, 240);
-    ctx.strokeRect(35, 35, 330, 230);
-    ctx.fillStyle = '#f5f0d0';
-    ctx.font = 'bold 28px Courier New';
-    ctx.fillText('[ REDACTED ]', 200, 155);
-    ctx.font = '11px Courier New';
-    ctx.fillStyle = '#8a7a50';
-    ctx.fillText('Document ID: HL-000-????', 200, 195);
-    ctx.fillText('Eyes Only · Security Level: OMEGA', 200, 215);
-    const a = document.createElement('a');
-    a.href = canvas.toDataURL('image/jpeg', 0.88);
-    a.download = 'Helena_Glory.jpg';
-    a.click();
-  });
-</script>
